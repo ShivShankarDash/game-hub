@@ -1,7 +1,9 @@
 import "./App.css";
 import {
+  Box,
   Button,
   ButtonGroup,
+  Flex,
   Grid,
   GridItem,
   HStack,
@@ -48,20 +50,22 @@ function App() {
         </GridItem>
       </Show>
       <GridItem area="main" bg="">
-        <HStack spacing={5} paddingLeft={2} marginBottom={5}>
-          <PlatformSelecter
-            selectedPlaform={gameQuery.platform}
-            onSelectPlatform={(platform) =>
-              setGameQuery({ ...gameQuery, platform })
-            }
-          />
+        <Flex paddingLeft={2} marginBottom={5}>
+          <Box marginRight={5}>
+            <PlatformSelecter
+              selectedPlaform={gameQuery.platform}
+              onSelectPlatform={(platform) =>
+                setGameQuery({ ...gameQuery, platform })
+              }
+            />
+          </Box>
           <SortSelector
             sortOrders={gameQuery.sortOrder}
             onSelectSortOrder={(sortOrder) =>
               setGameQuery({ ...gameQuery, sortOrder })
             }
           />
-        </HStack>
+        </Flex>
         <GameGrid gameQuery={gameQuery}></GameGrid>
       </GridItem>
     </Grid>
