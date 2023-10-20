@@ -6,6 +6,7 @@ import ExpendableText from "../components/ExpendableText";
 import DefinitionItem from "../components/DefinitionItem";
 import CriticScore from "../components/CriticScore";
 import GameTrailer from "../components/GameTrailer";
+import GameScreenshots from "../components/GameScreenshots";
 
 const GameDetailPage = () => {
   const { slug } = useParams();
@@ -35,8 +36,9 @@ const GameDetailPage = () => {
             <Text key={publisher.id}>{publisher.name}</Text>
           ))}
         </DefinitionItem>
-        <GameTrailer gameId={game.id} />
       </SimpleGrid>
+      <GameTrailer gameId={game.id} />
+      <GameScreenshots gameId={game.id} />
     </>
   );
 };
